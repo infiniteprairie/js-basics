@@ -21,3 +21,18 @@ function add(getX,getY,cb) {
 add( fetchX, fetchY, function(sum){
 	console.log( sum ); // that was easy, huh?
 } );
+
+// wait ms milliseconds
+function wait(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function fetchX() {
+  await wait(500);
+  return 500000;
+}
+
+async function fetchY() {
+  await wait(1500);
+  return 50;
+}
